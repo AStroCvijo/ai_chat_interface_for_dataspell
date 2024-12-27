@@ -1,0 +1,11 @@
+name,age,city,salary,department,performance_score
+Alice,24,New York,70000,HR,88
+Bob,30,Los Angeles,80000,Engineering,92
+Charlie,22,New York,65000,HR,84
+David,35,Chicago,120000,Marketing,96
+Eve,29,Chicago,95000,Engineering,90
+Frank,33,New York,88000,Finance,85
+Grace,27,San Francisco,72000,Marketing,89
+Hannah,31,Los Angeles,60000,HR,83
+Ian,28,Boston,85000,Engineering,91
+Julia,26,Boston,79000,Finance,87

@@ -1,0 +1,102 @@
+{
+    "title": "data_transformation",
+    "description": "Transformation and visualization commands for a DataFrame.",
+    "type": "object",
+    "properties": {
+      "commands": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "type": "string",
+              "enum": [
+                "filter_by_predicate",
+                "select_columns",
+                "sort_by_column",
+                "group_by_column",
+                "drop_missing_values",
+                "rename_columns",
+                "plot_histogram",
+                "plot_bar_chart",
+                "plot_line_chart"
+              ],
+              "description": "The type of transformation or visualization command."
+            },
+            "parameters": {
+              "type": "object",
+              "oneOf": [
+                {
+                  "properties": {
+                    "column_name": { "type": "string" },
+                    "predicate": { "type": "string" }
+                  },
+                  "required": ["column_name", "predicate"]
+                },
+                {
+                  "properties": {
+                    "columns": { 
+                      "type": "array", 
+                      "items": { 
+                        "type": "string" 
+                      } 
+                    }
+                  },
+                  "required": ["columns"]
+                },
+                {
+                  "properties": {
+                    "column_name": { 
+                      "type": "string" 
+                    },
+                    "ascending": { 
+                      "type": "boolean" 
+                    }
+                  },
+                  "required": ["column_name"]
+                },
+                {
+                  "properties": {
+                    "group_column": { 
+                      "type": "string" 
+                    },
+                    "aggregations": { 
+                      "type": "object", 
+                      "additionalProperties": { 
+                        "type": "string" 
+                      } 
+                    }
+                  },
+                  "required": ["group_column", "aggregations"]
+                },
+                {
+                  "properties": {
+                    "column_name": { "type": "string" },
+                    "bins": { "type": "integer" }
+                  },
+                  "required": ["column_name"]
+                },
+                {
+                  "properties": {
+                    "x_column": { "type": "string" },
+                    "y_column": { "type": "string" }
+                  },
+                  "required": ["x_column", "y_column"]
+                },
+                {
+                  "properties": {
+                    "x_column": { "type": "string" },
+                    "y_column": { "type": "string" }
+                  },
+                  "required": ["x_column", "y_column"]
+                }
+              ]
+            }
+          },
+          "required": ["command", "parameters"]
+        }
+      }
+    },
+    "required": ["commands"]
+  }
+  
