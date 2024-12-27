@@ -8,7 +8,7 @@ Date of creation: December, 2024
 ## Quickstart
 1. Clone the repository:
     ```bash
-    git clone https://github.com/AStroCvijo/ai_chat_interface_for_dataspell .git
+    git clone https://github.com/AStroCvijo/ai_chat_interface_for_dataspell.git
     ```
 
 2. Navigate to the project directory:
