@@ -18,14 +18,6 @@ def sort_by_column(df: pd.DataFrame, column_name: str, ascending: bool = True) -
     """Sort the DataFrame by a column"""
     return df.sort_values(by=column_name, ascending=ascending)
 
-def group_by_column(df: pd.DataFrame, group_column: str, aggregations: Dict[str, str]) -> pd.DataFrame:
-    """
-    Group by a column and apply aggregation.
-    Aggregations should be a dictionary where keys are column names
-    and values are aggregation functions like 'sum', 'mean', etc
-    """
-    return df.groupby(group_column).agg(aggregations).reset_index()
-
 def drop_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     """Drop rows with missing values"""
     return df.dropna()
