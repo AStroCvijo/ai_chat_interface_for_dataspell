@@ -33,7 +33,7 @@ class LLMChat:
         # Prompt with context
         prompt = f"""
         You are a data scientist assistant. Your task is to generate a sequence of transformations
-        for a pandas dataframe based on user input. Each transformation must be in the following JSON format:
+        for a pandas dataframe or commands for matplotlib based on user input.
 
         Available commands:
         1. filter_by_predicate: Takes a column name and a Python lambda predicate as a parameter.
@@ -42,6 +42,9 @@ class LLMChat:
         4. group_by_column: Groups the DataFrame by a column and aggregates with provided functions.
         5. drop_missing_values: Drops rows with missing values.
         6. rename_columns: Renames columns using a dictionary.
+        7. plot_histogram: Plots a histogram for a specified column.
+        8. plot_bar_chart: Plots a bar chart for specified x and y columns.
+        9. plot_line_chart: Plots a line chart for specified x and y columns.
 
         User input: "{user_input}"
         Generate the sequence in JSON format.
