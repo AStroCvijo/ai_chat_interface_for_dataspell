@@ -22,10 +22,6 @@ def apply_transformations(df: pd.DataFrame, transformations: list) -> pd.DataFra
                 column_name = parameters["column_name"]
                 ascending = parameters.get("ascending", True)
                 df = sort_by_column(df, column_name, ascending)
-            elif command == 'group_by_column':
-                group_column = parameters["group_column"]
-                aggregations = parameters["aggregations"]
-                df = group_by_column(df, group_column, aggregations)
             elif command == 'drop_missing_values':
                 df = drop_missing_values(df)
             elif command == 'rename_columns':
@@ -34,7 +30,7 @@ def apply_transformations(df: pd.DataFrame, transformations: list) -> pd.DataFra
                 column_mapping = {old_name: new_name}
                 df = rename_columns(df, column_mapping)
 
-            # New visualization commands
+            # Visualization commands
             elif command == 'plot_histogram':
                 column_name = parameters["column_name"]
                 bins = parameters.get("bins", 10)
