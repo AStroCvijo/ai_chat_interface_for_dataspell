@@ -10,6 +10,7 @@ def apply_transformations(df: pd.DataFrame, transformations: list) -> pd.DataFra
             command = transformation["command"]
             parameters = transformation["parameters"]
 
+            # Data commands
             if command == 'filter_by_predicate':
                 column_name = parameters["column_name"]
                 predicate_str = parameters["predicate"]
