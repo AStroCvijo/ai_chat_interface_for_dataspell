@@ -22,7 +22,7 @@ def arg_parse():
     # Other arguments
     parser.add_argument('-v', '--verbose', type=bool, default=False,
                         help="Whether to use verbose mode (useful for debugging)")
-    parser.add_argument('-sp', '--data_path', type=str, default="data/data.csv",
+    parser.add_argument('-dp', '--data_path', type=str, default="data/data.csv",
                         help="Path to data")
 
     # Parse the arguments
