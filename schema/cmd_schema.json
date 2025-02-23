@@ -19,7 +19,8 @@
                 "rename_columns",
                 "plot_histogram",
                 "plot_bar_chart",
-                "plot_line_chart"
+                "plot_line_chart",
+                "unknown"
               ],
               "description": "The type of transformation or visualization command."
             },
@@ -89,6 +90,10 @@
                     "y_column": { "type": "string" }
                   },
                   "required": ["x_column", "y_column"]
+                },
+                {
+                  "properties": {
+                  }
                 }
               ]
             }
