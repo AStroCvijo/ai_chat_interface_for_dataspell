@@ -28,7 +28,7 @@ class LLMChat:
         self.llm = self.llm.with_structured_output(self.json_schema)
 
     # Method for generating commands
-    def generate_commands(self, user_input: str) -> list:
+    def generate_commands(self, user_input: str, column_names: list) -> list:
 
         # Prompt with context
         prompt = f"""
@@ -46,8 +46,13 @@ class LLMChat:
         8. plot_bar_chart: Plots a bar chart for specified x and y columns.
         9. plot_line_chart: Plots a line chart for specified x and y columns.
 
+        Here is a list of columns in the dataset: {column_names}. If the user misspells any column names, automatically correct them.
+
+        Always generate predicates for the function using the format "lambda x: ...". For example: "lambda x: x > 70000".
+
         User input: "{user_input}"
         Generate the sequence in JSON format.
+        If no function corresponds to the user's input, do not hallucinate—simply return the command name "unknown."
         """
 
         # Get the response
